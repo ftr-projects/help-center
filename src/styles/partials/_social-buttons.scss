@@ -1,0 +1,17 @@
+.social-buttons {
+  li {
+    margin: 0 30px;
+    a {
+      font-size: 100px;
+      &.twitter {
+        color: #3bc1cd;
+      }
+      &.facebook {
+        color: #3e6688;
+      }
+      &.google-plus {
+        color: #d9272d;
+      }
+    }
+  }
+}

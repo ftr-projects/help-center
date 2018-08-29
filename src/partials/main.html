@@ -1,0 +1,248 @@
+  <main class="home">
+    ${require('./hero-banner.html')}
+
+    <section class="breadcrumbs mt-20">
+      <div class="container">
+        <a class="back" href="/"> &#60; Back to Help Center</a>
+      </div>
+    </section>
+
+    <section class="sec-menu bg-section1">
+      <div class="container">
+        <h2 class="text-center">Text to be Defined</h2>
+        <ul class="flex-wrapper">
+          <li class="menu-item">
+            <button @click="setActive('account')" :class="{ active: isActive('account') }">
+              <img src="../images/account.svg" alt="">
+              My account<br>& Billing
+            </button>
+          </li>
+          <li class="menu-item">
+            <button @click="setActive('internet')" :class="{ active: isActive('internet') }">
+              <img src="../images/internet.svg" alt="">
+              Internet
+            </button>
+
+          </li>
+          <li class="menu-item">
+            <button @click="setActive('tv')" :class="{ active: isActive('tv') }">
+              <img src="../images/tv.svg" alt="">
+              TV
+            </button>
+
+          </li>
+          <li class="menu-item">
+            <button @click="setActive('phone')" :class="{ active: isActive('phone') }">
+              <img src="../images/phone.svg" alt="">
+              Phone
+            </button>
+
+          </li>
+          <li class="menu-item">
+            <button @click="setActive('troubleshooting')" :class="{ active: isActive('troubleshooting') }">
+              <img src="../images/troubleshooting.svg" alt="">
+              troubleshooting
+            </button>
+
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="mvertical-30" v-show="visibleQuestions" >
+      <div class="container">
+        <div class="row">
+          <!--vertical menu-->
+          <div class="col-sm-4">
+
+            <ul class="list-group vertical-menu">
+
+              <li class="list-group-item">
+                <a
+                  class=""
+                  href="#"
+                  @click.prevent="setActiveItem('frecuently')"
+                  :class="{ active: isItemActive('frecuently') }"
+                  >Frecuently asked</a>
+              </li>
+
+              <li class="list-group-item parent-group-item" >
+                <a class="ac" data-toggle="collapse" href="#collapse1">Set top box</a>
+
+                  <ul id="collapse1" class="list-group collapse in">
+                    <li class="list-group-item">
+                      <a href="#"
+                        @click.prevent="setActiveItem('quantum')"
+                        :class="{ active: isItemActive('quantum') }">Quantum TV</a>
+                    </li>
+                    <li class="list-group-item">
+                      <a  href="#"
+                        @click.prevent="setActiveItem('lorem1')"
+                        :class="{ active: isItemActive('lorem1') }">Lorem ipsum TV selected</a>
+                    </li>
+                    <li class="list-group-item">
+                      <a href="#"
+                      @click.prevent="setActiveItem('lorem2')"
+                      :class="{ active: isItemActive('lorem2') }">Lorem ipsum TV</a>
+                    </li>
+                  </ul>
+
+              </li>
+
+              <li class="list-group-item">
+                <a
+                href="#"
+                @click.prevent="setActiveItem('remote')"
+                :class="{ active: isItemActive('remote') }">
+                My remote control</a>
+              </li>
+
+              <li class="list-group-item">
+                <a href="#"
+                @click.prevent="setActiveItem('porta')"
+                :class="{ active: isItemActive('porta') }">Porta ac consectetur ac</a>
+              </li>
+
+
+              <li class="list-group-item parent-group-item" >
+                <a class="ac" data-toggle="collapse" href="#collapse2">TV Channel and user guides</a>
+
+                  <ul id="collapse2" class="list-group collapse in">
+                    <li class="list-group-item">
+                      <a href="#"
+                        @click.prevent="setActiveItem('quantum')"
+                        :class="{ active: isItemActive('quantum') }">Quantum TV</a>
+                    </li>
+                    <li class="list-group-item">
+                      <a  href="#"
+                        @click.prevent="setActiveItem('lorem1')"
+                        :class="{ active: isItemActive('lorem1') }">Lorem ipsum TV selected</a>
+                    </li>
+                    <li class="list-group-item">
+                      <a href="#"
+                      @click.prevent="setActiveItem('lorem2')"
+                      :class="{ active: isItemActive('lorem2') }">Lorem ipsum TV</a>
+                    </li>
+                  </ul>
+
+              </li>
+            </ul>
+
+          </div>
+
+          <!--questions-->
+          <div class="col-sm-8">
+            <ul class="list-group question-list">
+              <li v-for="question in questions" class="list-group-item">
+                <a href="self-install.html">{{ question }}</a>
+              </li>
+            </ul>
+            <a
+              class="load-more"
+              href="#"
+              @click.prevent="loadMore"
+              v-show="isloadMoreVisible"> <i class="fa fa-plus-circle" aria-hidden="true"></i>Load 5 more questions</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="mvertical-50 cards-section">
+      <h2 class="text-center mb-30">Text to be Defined</h2>
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-6">
+            <div class="panel account panel-default">
+              <a href="#">
+                <h3>My account</h3>
+                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy?</p>
+              </a>
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="panel troubleshooting panel-default">
+              <a href="#">
+                <h3>Troubleshooting</h3>
+                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy?</p>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-6">
+            <div class="panel tv panel-default">
+              <a href="#">
+                <h3>TV</h3>
+                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy?</p>
+              </a>
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="panel internet panel-default">
+              <a href="#">
+                <h3>Internet</h3>
+                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy?</p>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-6">
+            <div class="panel phone panel-default">
+              <a href="#">
+                <h3>Phone</h3>
+                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy?</p>
+              </a>
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="panel account panel-default">
+              <a href="#">
+                <h3>My account</h3>
+                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy?</p>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <section class="mvertical-50 moving-up">
+      <div class="container">
+          <h3 class="text-center mb-30">Text to be Defined<sup>&circledR;</sup></h3>
+          <div class="row">
+            <div class="col-sm-4">
+              <img class=" img-responsive text-center mb-20" src="../images/call-us.jpg" alt="">
+              <h4 class="text-center mb-20">Call Us</h4>
+              <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut </p>
+            </div>
+            <div class="col-sm-4">
+              <img class=" img-responsive text-center mb-20" src="../images/pricing.jpg" alt="">
+              <h4 class="text-center mb-20">Online Chat</h4>
+              <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut </p>
+            </div>
+            <div class="col-sm-4">
+              <img class=" img-responsive text-center mb-20" src="../images/support-wizard.jpg" alt="">
+              <h4 class="text-center mb-20">Support Wizard</h4>
+              <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut </p>
+            </div>
+          </div>
+      </div>
+
+    </section>
+
+    <section class=" social-buttons mb-50">
+      <div class="container">
+        <h3 class="text-center">Text to be defined</h3>
+        <ul class="list-inline text-center">
+          <li><a href="" class="twitter"><i class="fa fa-twitter-square" aria-hidden="true"></i></a></li>
+          <li><a href="" class="facebook"><i class="fa fa-facebook-square" aria-hidden="true"></i></a></li>
+          <li><a href=""  class="google-plus"><i class="fa fa-google-plus-square" aria-hidden="true"></i></a></li>
+        </ul>
+      </div>
+    </section>
+
+
+
+</main>

@@ -1,0 +1,30 @@
+
+.sec-menu {
+  .menu-item {
+
+    text-align: center;
+    button {
+      @extend %reset-button;
+      text-align: center;
+      color: $light-gray;
+      text-transform: capitalize;
+      font-family: $title-family;
+      font-size: 22px;
+      &:hover, &.active {
+        img {
+          background: #e14641;
+          border-radius: 50%;
+
+        }
+
+      }
+
+    }
+    img {
+      width: 133px;
+      height: 133px;
+      display:block;
+      margin: 0 auto 10px ;
+    }
+  }
+}

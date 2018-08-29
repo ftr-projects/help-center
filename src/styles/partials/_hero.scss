@@ -1,0 +1,43 @@
+
+
+.hero-component {
+  .wrapper {
+    background-color: $yellow;
+    margin: 0;
+    position: relative;
+    min-height: 286px;
+
+    .container {
+      background-image: url('../images/hero-lady.png');
+      background-repeat: no-repeat;
+      background-position: center right;
+      min-height: 286px;
+    }
+
+    form {
+      position: relative;
+      .form-control {
+        border: 3px solid $green;
+        font-size: 16px;
+        padding: 20px;
+      }
+      button {
+        @extend %reset-button;
+        color: $green;
+        font-size: 24px;
+        position: absolute;
+        right: 15px;
+        top: 7px;
+      }
+    }
+
+  }
+
+  h1 {
+    color: $blue;
+    font-family: "nexa black";
+    font-size: 38px;
+    margin: 0 0 10px 0;
+  }
+
+}

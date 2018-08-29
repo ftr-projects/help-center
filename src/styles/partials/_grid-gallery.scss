@@ -1,0 +1,32 @@
+.gallery-section {
+  padding: 20px 0;
+  @media only screen and (min-width: $screen-md) {
+    padding: 40px 0;
+  }
+}
+
+.galllery-steps {
+  figure {
+    margin-bottom: 30px;
+    img {
+
+    }
+    figcaption {
+      margin-top: 15px;
+      justify-content: space-between;
+      display: flex;
+      .count {
+        font-family: "avinir next", "avinir", sans-serif;
+        font-weight: bold;
+        font-size: 26px;
+        width: 12%;
+        display: inline-block;
+        color: lighten($gray, 20%);
+      }
+      .info {
+        width: 88%;
+        font-size: 16px;
+      }
+    }
+  }
+}

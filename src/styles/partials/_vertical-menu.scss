@@ -1,0 +1,199 @@
+
+$background-gray: #f7f7f7;
+
+.vertical-menu, .question-list {
+
+  &.list-group {
+    margin: 0;
+
+    .list-group-item {
+      border: none;
+      margin: 0;
+      padding: 0;
+
+      a {
+        color: $gray;
+        display: block;
+
+        border: none;
+        border-top: 1px solid $super-light-gray;
+        background-color: transparent;
+        padding: 10px 20px;
+
+        &.active, &:hover {
+          border-top: 1px solid $red;
+          position: relative;
+          &:before {
+            content:"";
+            background: $red;
+            display: block;
+            position:absolute;
+            height: 2px;
+            margin-left: -20px;
+            top: 0;
+            width: 100%;
+          }
+        }
+      }
+
+      //subitem
+      &.parent-group-item {
+        position: relative;
+        padding-bottom: 0;
+
+        & > a {
+          &:after {
+            position: absolute;
+            right: 20px;
+            top: 10px;
+            display: inline;
+            content: "\f068";
+            color: $navy;
+            font-size: 20px;
+            font-family: FontAwesome;
+          }
+
+          &.collapsed {
+            padding-bottom: 10px;
+            &:before {
+              border-bottom: none;
+            }
+            &:after {
+              content: "\f067";
+            }
+          }
+        }
+
+        & > ul {
+          margin-left: 20px;
+          li {
+          display: list-item;
+
+            a {
+              display: block;
+              color: $gray;
+              background-color: transparent;
+              padding: 10px 0 10px 25px;
+
+              &.active, &:hover {
+                background-color: $background-gray;
+                border-top: 1px solid $super-light-gray;
+                margin-top: 0px;
+                color: $navy;
+              }
+
+              &:before {
+                content: "• ";
+                position: static;
+                margin: 0;
+                background: transparent;
+                display: inline;
+              }
+
+            }
+
+          }
+
+
+          // &:before {
+          //   border-bottom: 1px solid $super-light-gray;
+          //   content: '';
+          //   position: absolute;
+          //   top: 47px;
+          //   width: 100%;
+          //   height: 10px;
+          //   display: block;
+          //   margin: -10px -10px -10px -15px;
+          // }
+          //
+
+        }
+
+        // sublist
+        // .list-group {
+        //   margin-top: 10px;
+        // }
+        // .list-group-item {
+        //   margin: 0 -15px 0 20px;
+        //
+        //   &:before {
+        //     content: "\F111";
+        //     font-family: FontAwesome;
+        //     font-size: 5px;
+        //     color: $navy;
+        //     position: relative;
+        //     left: -10px;
+        //     top: -4px;
+        //   }
+        //
+        //   &.active {
+        //     border-bottom: 1px solid $super-light-gray;
+        //     color: $navy;
+        //   }
+        //
+        //   &:last-child {
+        //     border-bottom: none;
+        //   }
+        //
+        // }
+      }
+    }
+
+  }
+  .list-group {
+    margin: 0;
+  }
+}
+
+.question-list {
+  &.list-group {
+    margin-left: -30px;
+    background-color: $background-gray;
+    .list-group-item {
+      background-color: $background-gray;
+      border:none ;
+      a {
+        margin-left: 0;
+          border-top: none;
+        &:hover {
+          //border-top: 1px solid $super-light-gray;
+          border-top: none;
+          &:before {
+            background: transparent;
+          }
+        }
+        &:before {
+          background: transparent;
+        }
+      }
+
+    }
+  }
+
+}
+
+
+.load-more {
+  text-decoration: underline !important;
+  color:   $gray;
+  text-align: center !important;
+  display: block;
+  @extend .mvertical-20;
+  .fa {
+    color: $red;
+    text-decoration: none;
+    margin-right: 5px;
+    font-size: 26px;
+    position: relative;
+    top: 3px;
+  }
+}
+
+
+  // .cta-phone {
+  //   white-space: normal;
+  //     @media only screen and (min-width: $screen-lg - 50px) {
+  //       flex: 0 0 360px;
+  //       white-space: nowrap;
+  //     }
+  // }

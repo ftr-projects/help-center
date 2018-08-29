@@ -1,0 +1,46 @@
+.cards-section {
+  .panel {
+    padding: 40px 40px 15px;
+    border-radius: 0;
+    background-repeat: no-repeat;
+    background-size: 50px;
+    background-position: 30px 30px;
+    h3 {
+      font-size: 30px;
+      margin-left: 60px;
+      margin-top: 0;
+    }
+    p {
+      font-size: 26px;
+      margin-top: 20px;
+    }
+
+    a {
+      color: $gray;
+      p {
+        font-family: nexa;
+      }
+      &:hover {
+        color: $navy;
+      }
+    }
+
+    &.account {
+      background-image: url("../images/account.svg");
+    }
+    &.troubleshooting {
+      background-image: url("../images/troubleshooting.svg");
+    }
+    &.tv {
+      background-image: url("../images/tv.svg");
+    }
+    &.internet {
+      background-image: url("../images/internet.svg");
+    }
+    &.phone {
+      background-image: url("../images/phone.svg");
+    }
+  }
+
+
+}
